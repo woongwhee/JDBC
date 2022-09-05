@@ -26,8 +26,25 @@ public class Member {
     private String HOBBY;// VARCHAR2(50),
     private Date enrollDate;//ENROLLDATE DATE DEFAULT SYSDATE NOT NULL
 	
+    
 	public Member() {
 		
+	}
+	//회원 조회용 생성자 
+	public Member(int userNo, String userId, String userPwd, String userName, String gender, int age, String email,
+			String phone, String address, String HOBBY, Date enrollDate) {
+		super();
+		this.userNo = userNo;
+		this.userId = userId;
+		this.userPwd = userPwd;
+		this.userName = userName;
+		this.gender = gender;
+		this.age = age;
+		this.email = email;
+		this.phone = phone;
+		this.address = address;
+		this.HOBBY = HOBBY;
+		this.enrollDate = enrollDate;
 	}
 	// 회원 추가용 생서자 => userNo,enrolldate필드 빼고 초기화 할수 있는 생성자.
 	public Member(String userId, String userPwd, String userName, String gender, int age, String email,
@@ -121,8 +138,8 @@ public class Member {
 		return HOBBY;
 	}
 
-	public void setHOBBY(String hOBBY) {
-		HOBBY = hOBBY;
+	public void setHOBBY(String HOBBY) {
+		this.HOBBY = HOBBY;
 	}
 
 	public Date getEnrollDate() {
